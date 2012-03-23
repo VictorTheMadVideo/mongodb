@@ -136,7 +136,7 @@ class Cursor implements Iterator
         return $this->mongoCursor;
     }
 
-    /** @proxy */
+    
     public function current()
     {
         $current = $this->mongoCursor->current();
@@ -148,19 +148,17 @@ class Cursor implements Iterator
         return $current;
     }
 
-    /** @proxy */
+    
     public function key()
     {
         return $this->mongoCursor->key();
     }
 
-    /** @proxy */
     public function dead()
     {
         return $this->mongoCursor->dead();
     }
 
-    /** @proxy */
     public function explain()
     {
         $cursor = $this;
@@ -169,7 +167,6 @@ class Cursor implements Iterator
         }, true);
     }
 
-    /** @proxy */
     public function fields(array $f)
     {
         $this->fields = $f;
@@ -177,7 +174,6 @@ class Cursor implements Iterator
         return $this;
     }
 
-    /** @proxy */
     public function getNext()
     {
         $cursor = $this;
@@ -192,7 +188,6 @@ class Cursor implements Iterator
         return $next;
     }
 
-    /** @proxy */
     public function hasNext()
     {
         $cursor = $this;
@@ -201,7 +196,6 @@ class Cursor implements Iterator
         }, false);
     }
 
-    /** @proxy */
     public function hint(array $keyPattern)
     {
         $this->hints[] = $keyPattern;
@@ -209,7 +203,6 @@ class Cursor implements Iterator
         return $this;
     }
 
-    /** @proxy */
     public function immortal($liveForever = true)
     {
         $this->immortal = $liveForever;
@@ -217,13 +210,11 @@ class Cursor implements Iterator
         return $this;
     }
 
-    /** @proxy */
     public function info()
     {
         return $this->mongoCursor->info();
     }
 
-    /** @proxy */
     public function rewind()
     {
         $cursor = $this;
@@ -233,7 +224,6 @@ class Cursor implements Iterator
     }
 
 
-    /** @proxy */
     public function next()
     {
         $cursor = $this;
@@ -242,13 +232,11 @@ class Cursor implements Iterator
         }, false);
     }
 
-    /** @proxy */
     public function reset()
     {
         return $this->mongoCursor->reset();
     }
 
-    /** @proxy */
     public function count($foundOnly = false)
     {
         $cursor = $this;
@@ -257,7 +245,6 @@ class Cursor implements Iterator
         }, true);
     }
 
-    /** @proxy */
     public function addOption($key, $value)
     {
         $this->options[$key] = $value;
@@ -265,7 +252,6 @@ class Cursor implements Iterator
         return $this;
     }
 
-    /** @proxy */
     public function batchSize($num)
     {
         $this->batchSize = $num;
@@ -273,7 +259,6 @@ class Cursor implements Iterator
         return $this;
     }
 
-    /** @proxy */
     public function limit($num)
     {
         $this->limit = $num;
@@ -281,7 +266,6 @@ class Cursor implements Iterator
         return $this;
     }
 
-    /** @proxy */
     public function skip($num)
     {
         $this->skip = $num;
@@ -289,7 +273,6 @@ class Cursor implements Iterator
         return $this;
     }
 
-    /** @proxy */
     public function slaveOkay($okay = true)
     {
         $this->slaveOkay = $okay;
@@ -297,7 +280,6 @@ class Cursor implements Iterator
         return $this;
     }
 
-    /** @proxy */
     public function snapshot()
     {
         $this->snapshot = true;
@@ -305,7 +287,6 @@ class Cursor implements Iterator
         return $this;
     }
 
-    /** @proxy */
     public function sort($fields)
     {
         foreach ($fields as $fieldName => $order) {
@@ -320,7 +301,6 @@ class Cursor implements Iterator
         return $this;
     }
 
-    /** @proxy */
     public function tailable($tail = true)
     {
         $this->tailable = $tail;
@@ -328,7 +308,6 @@ class Cursor implements Iterator
         return $this;
     }
 
-    /** @proxy */
     public function timeout($ms)
     {
         $this->timeout = $ms;
@@ -336,7 +315,6 @@ class Cursor implements Iterator
         return $this;
     }
 
-    /** @proxy */
     public function valid()
     {
         return $this->mongoCursor->valid();
